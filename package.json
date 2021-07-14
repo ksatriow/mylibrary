@@ -1,0 +1,16 @@
+{
+  "name": "mylibrary-orm",
+  "version": "1.0.0",
+  "description": "implement basic orm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "satrio",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "sequelize": "^6.6.5"
+  }
+}
