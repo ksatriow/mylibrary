@@ -40,31 +40,22 @@ module.exports = {
       });
   },
   update: (req, res) => {
+    const { kode_buku, judul, kategori, penulis, penerbit, bahasa, halaman } =
+      req.body;
     const userId = req.params.id;
     const query = {
       where: { id: userId },
     };
-
     book
       .update(
-        {
-          bahasa: 'indonesia',
-        },
+        { kode_buku, judul, kategori, penulis, penerbit, bahasa, halaman },
         query
       )
-      .then((data) => {
-        res.json({
-          status: 200,
-          message: "berhasil diupdate",
-          data: userId,
-        });
-        // process.exit() // matikan server
+      .then(() => {
+        res.status(201).json("Update succesfully");
       })
       .catch((err) => {
-        res.json({
-          status: 400,
-          message: "data gagal diupdate",
-        });
+        res.status(422).json("Can't update book");
       });
   },
   show: (req, res) => {
